@@ -1,0 +1,134 @@
+ /*For Square-shaped photos */
+.square-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+/* Widen image */
+.wide-img {
+  width: 140px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.carousel {
+  position: absolute;
+  width: 80vmin;
+  height: 80vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel img {
+  position: absolute;
+  object-fit: cover;
+  border-radius: 12px;
+  animation: spin 8s infinite ease-in-out alternate;
+  transform-origin: center;
+}
+
+/* Place them in a circle */
+.carousel img:nth-child(1) { top: 0%; left: 40%; }
+.carousel img:nth-child(2) { top: 20%; left: 75%; }
+.carousel img:nth-child(3) { top: 60%; left: 75%; }
+.carousel img:nth-child(4) { top: 80%; left: 40%; }
+.carousel img:nth-child(5) { top: 60%; left: 5%; }
+.carousel img:nth-child(6) { top: 20%; left: 5%; }
+.carousel img:nth-child(7) { top: 35%; left: 20%; }
+.carousel img:nth-child(8) { top: 35%; left: 60%; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0deg); /* pause upright */
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(180deg); /* pause upside-down (upright if symmetric) */
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+ body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(122, 219, 234, 0.75);
+}
+.login-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;           
+    width: 100vw;
+    z-index:10;  
+}
+
+.login-box{
+  display: flex;
+  flex-direction: column;  
+  align-items: center;    
+  justify-content: center; 
+  min-width: 200px;        
+  min-height: 200px;       
+  background: rgba(199, 115, 241, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(21, 21, 212, 0.4);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;        
+  width: 100%;
+}
+input, button {
+  flex: 1 1 auto;  
+  height: 40px;    
+  border-radius: 8px;
+  border: 1px solid #100f0f;
+}
+
+button {
+  background: #1475cb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  margin-top: 15px; /* space from login button */
+}
+
+.social-btn {
+  font-size: 22px;
+  margin: 0 8px;
+  color: white;
+  background: linear-gradient(165deg, #4b0272, #f108c3, #cf2e16, #ffd500);  padding: 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+ background: linear-gradient(to bottom, #945e29 50%,  #f6e5d4 50%);  padding: 10px;  transform: scale(1.1);
+ color: #100f0f;
+}
